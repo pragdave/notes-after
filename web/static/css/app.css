@@ -1,0 +1,22 @@
+/* This file is for your main application css. */
+
+.header {
+    height: 8rem;
+    border-bottom: 1px solid #ffe0e0;
+}
+
+.header h1 {
+    padding-top: 3rem;
+    font-size: 5rem;
+    color: #e01e3c;
+    font-family: Georgia;
+    font-weight: normal;
+}
+.header .mustang {
+    display: block;
+    float: right;
+    background: url(/images/mustang.png) no-repeat center bottom;
+    background-size: contain;
+    height: 8rem;
+    width: 8rem;
+}

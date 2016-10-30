@@ -1,0 +1,16 @@
+<%= if @current_user do %>
+  <h2>Welcome, <%= @current_user.name %>!</h2>
+  <img src="<%= @current_user.avatar %>" class="img-circle"/>
+  <p>
+  <%= link "Logout",
+      to: auth_path(@conn, :delete, []),
+      method: :delete,
+      class: "btn btn-danger"
+  %>
+  </p>
+
+<% else %>
+  <a class="btn btn-primary btn-lg" href="/auth/github">
+    Sign in with GitHub
+  </a>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1><%= @note.title %></h1>
+    </div>
+    <div class="panel-body">
+      <%= markdown_to_html(@note.body) %>
+    </div>
+</div>
+
+
+<%= link "Home",
+    class: "btn btn-success pull-right",
+    to: "/"
+    %>
+
+
+<%= link "Edit",
+    class: "btn btn-warning",
+    to: note_path(@conn, :edit, @note)
+    %>
+
+<%= link "Back",
+    class: "btn btn-success",
+    to: note_path(@conn, :index)
+    %>
+
+

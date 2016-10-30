@@ -1,0 +1,56 @@
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h3>Your notes</h3>
+  </div>
+
+<div class="panel-body">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for note <- @notes do %>
+    <tr>
+      <td><%= note.title %></td>
+      <td><%= note.body %></td>
+
+      <td class="text-right">
+        <%= link "Show",
+                 to: note_path(@conn, :show, note),
+                 class: "btn btn-default btn-xs" %>
+
+        <%= link "Edit",
+                 to: note_path(@conn, :edit, note),
+                 class: "btn btn-default btn-xs" %>
+
+        <%= link "Delete",
+                 to: note_path(@conn, :delete, note),
+                 method: :delete,
+                 data: [confirm: "Are you sure?"],
+                 class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+<nav>
+<%= link "Home",
+    class: "btn btn-success pull-right",
+    to: "/"
+    %>
+
+<%= link "New note",
+    class: "btn btn-primary",
+    to: note_path(@conn, :new)
+    %>
+</nav>
+
